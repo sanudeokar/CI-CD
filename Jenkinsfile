@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     docker.withServer("${DOCKER_HOST}") {
-                        docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB_CREDENTIALS') {
+                        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials-id') {
                             docker.image('sanudeokar/ci-cd:latest').push()
                         }
                     }
