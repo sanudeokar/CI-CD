@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     docker.withServer("${DOCKER_HOST}") {
-                        docker.image('sanudeokar/ci-cd:latest').run('-d -p 8080:8080')
+                        docker.image('sanudeokar/ci-cd:latest').run('-d -p 8081:8080')
                     }
                 }
             }
