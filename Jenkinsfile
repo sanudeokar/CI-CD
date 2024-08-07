@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git branch: 'main', url: 'https://github.com/sanudeokar/CI-CD'
+               git branch: 'main', url: 'https://github.com/sanudeokar/ci-cd'
             }
         }
         stage('Build Docker Image') {
