@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     docker.withServer("${DOCKER_HOST}") {
-                        docker.build('sanudeokar/CI-CD:latest')
+                        docker.build('sanudeokar/ci-cd:latest')
                     }
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
                 script {
                     docker.withServer("${DOCKER_HOST}") {
                         docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB_CREDENTIALS') {
-                            docker.image('sanudeokar/CI-CD:latest').push()
+                            docker.image('sanudeokar/ci-cd:latest').push()
                         }
                     }
                 }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     docker.withServer("${DOCKER_HOST}") {
-                        docker.image('sanudeokar/CI-CD:latest').run('-d -p 8080:8080')
+                        docker.image('sanudeokar/ci-cd:latest').run('-d -p 8080:8080')
                     }
                 }
             }
